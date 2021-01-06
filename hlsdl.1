@@ -1,0 +1,128 @@
+.TH hlsdl 1 "Nov 25, 2020"
+
+.
+.
+.
+.SH NAME
+hlsdl - download VoD HLS (.m3u8) files
+
+.
+.
+.
+.SH SYNOPSIS
+
+.B
+hlsdl
+[\fIoptions\fP]
+.I
+url
+
+.
+.
+.
+.SH DESCRIPTION
+
+hlsdl downloads .m3u8 playlists (using fragmented MPEG-2 Transport Streams) to
+a .ts video. It supports decryption of both AES-128 and SAMPLE-AES encryption.
+It requires the libcurl and libcrypto libraries.
+
+.
+.
+.
+.SH OPTIONS
+
+.TP
+.B
+-b 
+Automatically choose the best quality.
+.TP
+.BI -W " width
+Choose largest width lower or equal than this.
+.TP
+.BI -H " height
+Choose largest height lower or equal than this.
+.TP
+.BI -A " language
+Select audio language.
+.TP
+.B
+-v 
+Verbose more information. Repeating this option increases verbosity each time.
+.TP
+.BI -o " file
+Name of output file ("-" alias for stdout).
+.TP
+.BI -u " user_agent
+Set custom HTTP User-Agent header.
+.TP
+.BI -h " header
+Add a custom HTTP header. This option can be applied multiple times to adds
+multiple HTTP header lines.
+.TP
+.BI -p " url
+Set proxy uri.
+.TP
+.BI -k " old
+.sp -1
+.TP
+.BI -n " new
+Replace every occurence of the string \fIold\fP with \fInew\fP in the
+AES key uri.
+.TP
+.B
+-f 
+Overwrite the output file without asking.
+.TP
+.B
+-F 
+Force ignore detection of DRM.
+.TP
+.BI -K " key
+Use \fIkey\fP in place of the AES key value found from the url.
+The key is a string of 32 hexadecimal characters, with no hyphen in between.
+.TP
+.B
+-q 
+Print less to the console. This option decreases the verbosity level each time
+is given. It is the opposite of \fI-v\fP.
+.TP
+.B
+-d 
+Print the openssl decryption command.
+.TP
+.B
+-t 
+Print the links to the .ts files.
+.TP
+.BI -s " seconds
+Set live start offset in seconds.
+.TP
+.BI -i " seconds
+Set live stream download duration in seconds.
+.TP
+.BI -e " seconds
+Set refresh delay in seconds.
+.TP
+.BI -r " number
+Set max retries at open.
+.TP
+.BI -w " number
+Set max download segment retries.
+.TP
+.BI -a " url
+Set additional url to the audio media playlist.
+.TP
+.B
+-c 
+Treat HTTP code 206 as 200 even if request was made without range header.
+.TP
+.BI -C " file
+The file holding cookie data in the old Netscape / Mozilla cookie data format.
+
+.
+.
+.
+.SH SOURCE
+
+https://github.com/selsta/hlsdl
+

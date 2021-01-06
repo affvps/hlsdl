@@ -31,12 +31,14 @@ struct hls_args {
     bool use_best;
     int maxwidth;
     int maxheight;
+    char *audiolang;
     int skip_encryption;
     bool force_overwrite;
     bool force_ignoredrm;
     bool dump_ts_urls;
     bool dump_dec_cmd;
     int live_start_offset_sec;
+    int live_duration_sec;
     int refresh_delay_sec;
     int segment_download_retries;
     int open_max_retries;
